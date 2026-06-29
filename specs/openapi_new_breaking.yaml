@@ -1,0 +1,57 @@
+openapi: 3.1.0
+info:
+  title: Orders API
+  version: 2.0.0
+paths:
+  /api/orders/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+        - name: region
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Order found
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [id]
+                properties:
+                  id:
+                    type: string
+                  total:
+                    type: number
+  /api/orders:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [customer_id, items, payment_method]
+              properties:
+                customer_id:
+                  type: string
+                items:
+                  type: array
+                payment_method:
+                  type: string
+      responses:
+        "201":
+          description: Order created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
