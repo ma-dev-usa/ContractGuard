@@ -1,6 +1,10 @@
 # ContractGuard
 
+![Tests](https://github.com/ma-dev-usa/ContractGuard/actions/workflows/tests.yml/badge.svg)
+
 ContractGuard is a Python-based API compatibility gate that detects breaking OpenAPI changes before release. It compares old and new API specifications, classifies contract risk, and generates Markdown reports for CI/CD pipelines.
+
+This project demonstrates API contract testing, breaking-change detection, release-readiness reporting, pytest validation, and CI workflow setup.
 
 ## Why This Exists
 
